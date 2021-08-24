@@ -1,0 +1,109 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: #000;
+  font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+  line-height: 1.5;
+  /* background-color: rgb(20, 238, 238); */
+  background-image: url(../images/beach.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 100% 20%;
+}
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.search-form {
+  display: flex;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+.input {
+  width: 220px;
+  height: 60px;
+  outline: transparent;
+  color: rgb(11, 19, 19);
+  border-radius: 30px;
+  border: 5px solid rgb(233, 45, 45);
+}
+.input:focus-within {
+  border: 5px solid rgb(148, 236, 236);
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+.search {
+  cursor: pointer;
+  display: inline-block;
+  margin-left: 20px;
+  padding: 5px;
+  width: 130px;
+  height: 60px;
+  color: rgb(64, 207, 233);
+  font-size: 20px;
+  font-weight: bolder;
+  border: 5px solid rgb(231, 222, 101);
+  border-radius: 30px;
+}
+.search:hover,
+.search:focus {
+  border: 5px solid rgb(148, 236, 236);
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+.text {
+  color: rgb(12, 228, 228);
+  font-weight: bold;
+  font-size: 20px;
+}
+.text:focus,
+.text:hover {
+  color: rgb(15, 23, 131);
+}
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  list-style: none;
+  margin-left: -30px;
+  margin-top: -30px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.gallery-item {
+  margin-left: 30px;
+  margin-top: 30px;
+  flex-basis: calc((100% - 4 * 30px) / 4);
+}
+.gallery-img {
+  outline: 2px aqua;
+  border-radius: 50px;
+  border: 2px solid springgreen;
+}
+.gallery-title {
+  text-align: center;
+  color: rgb(226, 13, 77);
+  font-size: 20px;
+  font-weight: bold;
+}
+.gallery-text {
+  font-size: 20px;
+  letter-spacing: normal;
+  color: rgb(37, 15, 231);
+}
