@@ -10,7 +10,9 @@ function onSearchCocktail(e) {
   axios
     .get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${searchValue}`)
     .then(result => {
-      renderGallery(result.data.drinks);
+      refs.gallery.innerHTML = "";
+      console.log(result.data.drinks);
+      renderGallery(result.data.drinks);  
       refs.form.reset();
     })
     .catch(error => console.log(error));
