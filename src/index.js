@@ -5,6 +5,7 @@ import { notice } from '@pnotify/core';
 import { error } from '@pnotify/core';
 import '@pnotify/core/dist/BrightTheme.css';
 import '@pnotify/core/dist/PNotify.css';
+import * as basicLightbox from 'basiclightbox';
 
 let searchValue = '';
 function onSearchCocktail(e) {
@@ -40,6 +41,25 @@ function noFound() {
     delay: 2500,
   });
 }
+function onOpenLightbox(e) {
+  e.preventDefault();
+  if (e.target.nodeName !== 'IMG') {
+    return;
+  }
+  const instance = basicLightbox.create(`
+    <img src='${e.target.src}' >
+`);
+
+  instance.show();
+  window.addEventListener('keydown', e => {
+    const ESC_KEY_CODE = 'Escape';
+    if (e.code === ESC_KEY_CODE) {
+      instance.close();
+    }
+  });
+}
+refs.gallery.addEventListener('click', onOpenLightbox);
+
 // async function onFetchCocktails(searchValue) {
 //   try {
 //     const responseUrl = await fetch(
@@ -51,4 +71,3 @@ function noFound() {
 //     console.log('Error!');
 //   }
 // }
-function newBack() {}
