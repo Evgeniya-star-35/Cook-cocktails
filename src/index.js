@@ -10,16 +10,16 @@ let searchValue = '';
 function onSearchCocktail(e) {
   e.preventDefault();
   searchValue = refs.input.value;
-  
+
   axios
     .get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${searchValue}`)
     .then(result => {
-      refs.gallery.innerHTML = "";
+      refs.gallery.innerHTML = '';
       console.log(result.data.drinks);
       if (result.data.drinks === null) {
         noFound();
       }
-      renderGallery(result.data.drinks);  
+      renderGallery(result.data.drinks);
       refs.form.reset();
     })
     .catch(error => console.log(error));
@@ -51,3 +51,4 @@ function noFound() {
 //     console.log('Error!');
 //   }
 // }
+function newBack() {}
